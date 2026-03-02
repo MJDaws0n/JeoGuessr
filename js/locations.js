@@ -185,7 +185,7 @@ const LOCATIONS = [
   {
     lat: 46.9480,
     lng: 7.4474,
-    name: "Old Town area",
+    name: "Bern Old Town",
     city: "Bern",
     country: "Switzerland"
   },
@@ -255,14 +255,14 @@ const LOCATIONS = [
   {
     lat: 52.2297,
     lng: 21.0122,
-    name: "Old Town area",
+    name: "Warsaw Old Town",
     city: "Warsaw",
     country: "Poland"
   },
   {
     lat: 44.4268,
     lng: 26.1025,
-    name: "Old Town area",
+    name: "Bucharest Old Town",
     city: "Bucharest",
     country: "Romania"
   },
@@ -462,7 +462,7 @@ const LOCATIONS = [
   {
     lat: 34.0522,
     lng: -118.2437,
-    name: "Downtown area",
+    name: "Hollywood Boulevard area",
     city: "Los Angeles",
     country: "United States"
   },
@@ -490,7 +490,7 @@ const LOCATIONS = [
   {
     lat: 25.7617,
     lng: -80.1918,
-    name: "Downtown area",
+    name: "South Beach area",
     city: "Miami",
     country: "United States"
   },
