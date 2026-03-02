@@ -90,7 +90,7 @@ function loadRound() {
   document.getElementById("current-score").textContent = totalScore.toLocaleString();
 
   const streetViewUrl =
-    `https://maps.google.com/maps?q=&layer=c&cbll=${location.lat},${location.lng}&cbp=12,0,,0,0&output=svembed`;
+    `https://maps.google.com/maps?q=&layer=c&cbll=${location.lat},${location.lng}&cbp=12,0,,0,0&output=svembed&hl=en&source=outdoor`;
 
   document.getElementById("streetview-frame").src = streetViewUrl;
 
