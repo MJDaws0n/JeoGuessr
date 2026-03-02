@@ -25,6 +25,6 @@ A fun geography guessing game inspired by GeoGuessr — built with pure HTML, CS
 - **HTML5** — semantic structure
 - **CSS3** — custom styling, gradients, animations, responsive layout
 - **JavaScript** — game logic, Haversine distance formula, DOM manipulation
-- **[Leaflet.js](https://leafletjs.com/)** — interactive map (loaded via CDN)
+- **[Leaflet.js](https://leafletjs.com/)** — interactive map (bundled locally)
 - **OpenStreetMap** — map tiles
 - **Google Maps** — embedded Street View

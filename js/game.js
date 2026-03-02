@@ -90,9 +90,7 @@ function loadRound() {
   document.getElementById("current-score").textContent = totalScore.toLocaleString();
 
   const streetViewUrl =
-    "https://maps.google.com/maps?q=&layer=c&cbll=" +
-    location.lat + "," + location.lng +
-    "&cbp=12,0,,0,0&output=svembed";
+    `https://maps.google.com/maps?q=&layer=c&cbll=${location.lat},${location.lng}&cbp=12,0,,0,0&output=svembed`;
 
   document.getElementById("streetview-frame").src = streetViewUrl;
 
@@ -248,14 +246,12 @@ function showFinalResults() {
     }
 
     li.innerHTML =
-      '<div class="summary-round">Round ' + (index + 1) + "</div>" +
-      '<div class="summary-location">' +
-        round.location.name + ", " + round.location.city + ", " + round.location.country +
-      "</div>" +
-      '<div class="summary-stats">' +
-        '<span class="summary-distance">📍 ' + distanceText + " away</span>" +
-        '<span class="summary-score">⭐ ' + round.score.toLocaleString() + " pts</span>" +
-      "</div>";
+      `<div class="summary-round">Round ${index + 1}</div>` +
+      `<div class="summary-location">${round.location.name}, ${round.location.city}, ${round.location.country}</div>` +
+      `<div class="summary-stats">` +
+        `<span class="summary-distance">📍 ${distanceText} away</span>` +
+        `<span class="summary-score">⭐ ${round.score.toLocaleString()} pts</span>` +
+      `</div>`;
     summaryList.appendChild(li);
   });
 
@@ -285,9 +281,7 @@ function showFinalResults() {
     })
       .addTo(resultMap)
       .bindPopup(
-        "<b>Round " + (index + 1) + "</b><br>" +
-        round.location.name + "<br>" +
-        round.location.city + ", " + round.location.country
+        `<b>Round ${index + 1}</b><br>${round.location.name}<br>${round.location.city}, ${round.location.country}`
       );
   });
 }
