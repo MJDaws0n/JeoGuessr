@@ -1,683 +1,454 @@
 const LOCATIONS = [
   // ── Europe ──────────────────────────────────────
-  {
-    lat: 48.8588,
-    lng: 2.2970,
-    name: "Eiffel Tower area",
-    city: "Paris",
-    country: "France"
-  },
-  {
-    lat: 48.8606,
-    lng: 2.3376,
-    name: "Louvre area",
-    city: "Paris",
-    country: "France"
-  },
-  {
-    lat: 48.8530,
-    lng: 2.3499,
-    name: "Notre-Dame area",
-    city: "Paris",
-    country: "France"
-  },
-  {
-    lat: 40.4168,
-    lng: -3.7038,
-    name: "Puerta del Sol area",
-    city: "Madrid",
-    country: "Spain"
-  },
-  {
-    lat: 41.3851,
-    lng: 2.1734,
-    name: "La Rambla",
-    city: "Barcelona",
-    country: "Spain"
-  },
-  {
-    lat: 37.1773,
-    lng: -3.5986,
-    name: "Alhambra area",
-    city: "Granada",
-    country: "Spain"
-  },
-  {
-    lat: 41.9029,
-    lng: 12.4964,
-    name: "Colosseum area",
-    city: "Rome",
-    country: "Italy"
-  },
-  {
-    lat: 43.7230,
-    lng: 10.3966,
-    name: "Leaning Tower area",
-    city: "Pisa",
-    country: "Italy"
-  },
-  {
-    lat: 43.7710,
-    lng: 11.2536,
-    name: "Florence Cathedral area",
-    city: "Florence",
-    country: "Italy"
-  },
-  {
-    lat: 45.4341,
-    lng: 12.3388,
-    name: "Rialto Bridge area",
-    city: "Venice",
-    country: "Italy"
-  },
-  {
-    lat: 40.8518,
-    lng: 14.2681,
-    name: "Naples waterfront",
-    city: "Naples",
-    country: "Italy"
-  },
-  {
-    lat: 51.5007,
-    lng: -0.1246,
-    name: "Big Ben area",
-    city: "London",
-    country: "United Kingdom"
-  },
-  {
-    lat: 51.5081,
-    lng: -0.0759,
-    name: "Tower Bridge area",
-    city: "London",
-    country: "United Kingdom"
-  },
-  {
-    lat: 55.9533,
-    lng: -3.1883,
-    name: "Royal Mile",
-    city: "Edinburgh",
-    country: "United Kingdom"
-  },
-  {
-    lat: 52.5163,
-    lng: 13.3777,
-    name: "Brandenburg Gate area",
-    city: "Berlin",
-    country: "Germany"
-  },
-  {
-    lat: 48.1351,
-    lng: 11.5820,
-    name: "Marienplatz area",
-    city: "Munich",
-    country: "Germany"
-  },
-  {
-    lat: 50.9375,
-    lng: 6.9603,
-    name: "Cologne Cathedral area",
-    city: "Cologne",
-    country: "Germany"
-  },
-  {
-    lat: 52.3676,
-    lng: 4.9041,
-    name: "Dam Square area",
-    city: "Amsterdam",
-    country: "Netherlands"
-  },
-  {
-    lat: 50.8467,
-    lng: 4.3525,
-    name: "Grand Place area",
-    city: "Brussels",
-    country: "Belgium"
-  },
-  {
-    lat: 59.3275,
-    lng: 18.0675,
-    name: "Gamla Stan",
-    city: "Stockholm",
-    country: "Sweden"
-  },
-  {
-    lat: 60.1699,
-    lng: 24.9384,
-    name: "Senate Square area",
-    city: "Helsinki",
-    country: "Finland"
-  },
-  {
-    lat: 55.6761,
-    lng: 12.5683,
-    name: "Nyhavn area",
-    city: "Copenhagen",
-    country: "Denmark"
-  },
-  {
-    lat: 59.9139,
-    lng: 10.7522,
-    name: "Karl Johans gate",
-    city: "Oslo",
-    country: "Norway"
-  },
-  {
-    lat: 50.0755,
-    lng: 14.4378,
-    name: "Old Town Square",
-    city: "Prague",
-    country: "Czech Republic"
-  },
-  {
-    lat: 47.4979,
-    lng: 19.0402,
-    name: "Parliament area",
-    city: "Budapest",
-    country: "Hungary"
-  },
-  {
-    lat: 48.2082,
-    lng: 16.3738,
-    name: "St. Stephen's Cathedral area",
-    city: "Vienna",
-    country: "Austria"
-  },
-  {
-    lat: 46.9480,
-    lng: 7.4474,
-    name: "Bern Old Town",
-    city: "Bern",
-    country: "Switzerland"
-  },
-  {
-    lat: 47.3769,
-    lng: 8.5417,
-    name: "Bahnhofstrasse",
-    city: "Zurich",
-    country: "Switzerland"
-  },
-  {
-    lat: 38.7223,
-    lng: -9.1393,
-    name: "Belém Tower area",
-    city: "Lisbon",
-    country: "Portugal"
-  },
-  {
-    lat: 41.1579,
-    lng: -8.6291,
-    name: "Ribeira area",
-    city: "Porto",
-    country: "Portugal"
-  },
-  {
-    lat: 37.9715,
-    lng: 23.7267,
-    name: "Acropolis area",
-    city: "Athens",
-    country: "Greece"
-  },
-  {
-    lat: 55.7558,
-    lng: 37.6176,
-    name: "Red Square area",
-    city: "Moscow",
-    country: "Russia"
-  },
-  {
-    lat: 59.9343,
-    lng: 30.3351,
-    name: "Nevsky Prospekt",
-    city: "Saint Petersburg",
-    country: "Russia"
-  },
-  {
-    lat: 64.1466,
-    lng: -21.9426,
-    name: "Hallgrímskirkja area",
-    city: "Reykjavik",
-    country: "Iceland"
-  },
-  {
-    lat: 53.3498,
-    lng: -6.2603,
-    name: "O'Connell Street area",
-    city: "Dublin",
-    country: "Ireland"
-  },
-  {
-    lat: 50.0647,
-    lng: 19.9450,
-    name: "Main Square area",
-    city: "Krakow",
-    country: "Poland"
-  },
-  {
-    lat: 52.2297,
-    lng: 21.0122,
-    name: "Warsaw Old Town",
-    city: "Warsaw",
-    country: "Poland"
-  },
-  {
-    lat: 44.4268,
-    lng: 26.1025,
-    name: "Bucharest Old Town",
-    city: "Bucharest",
-    country: "Romania"
-  },
-  {
-    lat: 42.6977,
-    lng: 23.3219,
-    name: "Vitosha Boulevard",
-    city: "Sofia",
-    country: "Bulgaria"
-  },
-  {
-    lat: 45.8150,
-    lng: 15.9819,
-    name: "Ban Jelačić Square area",
-    city: "Zagreb",
-    country: "Croatia"
-  },
-  {
-    lat: 43.5081,
-    lng: 16.4402,
-    name: "Riva waterfront",
-    city: "Split",
-    country: "Croatia"
-  },
+  // France
+  { lat: 48.8588, lng: 2.2970, name: "Eiffel Tower area", city: "Paris", country: "France" },
+  { lat: 48.8606, lng: 2.3376, name: "Louvre area", city: "Paris", country: "France" },
+  { lat: 48.8530, lng: 2.3499, name: "Notre-Dame area", city: "Paris", country: "France" },
+  { lat: 48.8738, lng: 2.2950, name: "Arc de Triomphe area", city: "Paris", country: "France" },
+  { lat: 48.8867, lng: 2.3431, name: "Sacré-Cœur area", city: "Paris", country: "France" },
+  { lat: 43.2965, lng: 5.3698, name: "Old Port area", city: "Marseille", country: "France" },
+  { lat: 43.7102, lng: 7.2620, name: "Promenade des Anglais", city: "Nice", country: "France" },
+  { lat: 45.7640, lng: 4.8357, name: "Place Bellecour area", city: "Lyon", country: "France" },
+  { lat: 44.8378, lng: -0.5792, name: "Place de la Bourse area", city: "Bordeaux", country: "France" },
+
+  // Spain
+  { lat: 40.4168, lng: -3.7038, name: "Puerta del Sol area", city: "Madrid", country: "Spain" },
+  { lat: 40.4146, lng: -3.6926, name: "Retiro Park area", city: "Madrid", country: "Spain" },
+  { lat: 41.3851, lng: 2.1734, name: "La Rambla", city: "Barcelona", country: "Spain" },
+  { lat: 41.4036, lng: 2.1744, name: "Sagrada Família area", city: "Barcelona", country: "Spain" },
+  { lat: 37.1773, lng: -3.5986, name: "Alhambra area", city: "Granada", country: "Spain" },
+  { lat: 37.3886, lng: -5.9823, name: "Plaza de España area", city: "Seville", country: "Spain" },
+  { lat: 39.4699, lng: -0.3763, name: "City of Arts area", city: "Valencia", country: "Spain" },
+  { lat: 36.7213, lng: -4.4214, name: "Málaga Cathedral area", city: "Málaga", country: "Spain" },
+  { lat: 43.2630, lng: -2.9350, name: "Casco Viejo area", city: "Bilbao", country: "Spain" },
+
+  // Italy
+  { lat: 41.9029, lng: 12.4964, name: "Colosseum area", city: "Rome", country: "Italy" },
+  { lat: 41.9022, lng: 12.4539, name: "Vatican area", city: "Rome", country: "Italy" },
+  { lat: 41.8986, lng: 12.4769, name: "Trevi Fountain area", city: "Rome", country: "Italy" },
+  { lat: 43.7230, lng: 10.3966, name: "Leaning Tower area", city: "Pisa", country: "Italy" },
+  { lat: 43.7710, lng: 11.2536, name: "Florence Cathedral area", city: "Florence", country: "Italy" },
+  { lat: 43.7687, lng: 11.2569, name: "Ponte Vecchio area", city: "Florence", country: "Italy" },
+  { lat: 45.4341, lng: 12.3388, name: "Rialto Bridge area", city: "Venice", country: "Italy" },
+  { lat: 45.4343, lng: 12.3390, name: "St. Mark's Square area", city: "Venice", country: "Italy" },
+  { lat: 40.8518, lng: 14.2681, name: "Naples waterfront", city: "Naples", country: "Italy" },
+  { lat: 45.4642, lng: 9.1900, name: "Duomo area", city: "Milan", country: "Italy" },
+  { lat: 44.4949, lng: 11.3426, name: "Piazza Maggiore area", city: "Bologna", country: "Italy" },
+  { lat: 45.0703, lng: 7.6869, name: "Piazza Castello area", city: "Turin", country: "Italy" },
+  { lat: 40.6401, lng: 14.6027, name: "Amalfi Coast area", city: "Amalfi", country: "Italy" },
+
+  // United Kingdom
+  { lat: 51.5007, lng: -0.1246, name: "Big Ben area", city: "London", country: "United Kingdom" },
+  { lat: 51.5081, lng: -0.0759, name: "Tower Bridge area", city: "London", country: "United Kingdom" },
+  { lat: 51.5014, lng: -0.1419, name: "Buckingham Palace area", city: "London", country: "United Kingdom" },
+  { lat: 51.5138, lng: -0.0984, name: "St Paul's Cathedral area", city: "London", country: "United Kingdom" },
+  { lat: 51.5074, lng: -0.1278, name: "Trafalgar Square area", city: "London", country: "United Kingdom" },
+  { lat: 51.5194, lng: -0.1270, name: "British Museum area", city: "London", country: "United Kingdom" },
+  { lat: 55.9533, lng: -3.1883, name: "Royal Mile", city: "Edinburgh", country: "United Kingdom" },
+  { lat: 55.8611, lng: -4.2502, name: "George Square area", city: "Glasgow", country: "United Kingdom" },
+  { lat: 53.4808, lng: -2.2426, name: "Piccadilly Gardens area", city: "Manchester", country: "United Kingdom" },
+  { lat: 53.4084, lng: -2.9916, name: "Albert Dock area", city: "Liverpool", country: "United Kingdom" },
+  { lat: 51.4545, lng: -2.5879, name: "Harbourside area", city: "Bristol", country: "United Kingdom" },
+  { lat: 51.3811, lng: -2.3590, name: "Royal Crescent area", city: "Bath", country: "United Kingdom" },
+  { lat: 52.2053, lng: 0.1218, name: "King's College area", city: "Cambridge", country: "United Kingdom" },
+  { lat: 51.7520, lng: -1.2577, name: "Bodleian Library area", city: "Oxford", country: "United Kingdom" },
+
+  // Germany
+  { lat: 52.5163, lng: 13.3777, name: "Brandenburg Gate area", city: "Berlin", country: "Germany" },
+  { lat: 52.5200, lng: 13.4050, name: "Alexanderplatz area", city: "Berlin", country: "Germany" },
+  { lat: 48.1351, lng: 11.5820, name: "Marienplatz area", city: "Munich", country: "Germany" },
+  { lat: 50.9375, lng: 6.9603, name: "Cologne Cathedral area", city: "Cologne", country: "Germany" },
+  { lat: 53.5511, lng: 9.9937, name: "Speicherstadt area", city: "Hamburg", country: "Germany" },
+  { lat: 50.1109, lng: 8.6821, name: "Römerberg area", city: "Frankfurt", country: "Germany" },
+  { lat: 51.2277, lng: 6.7735, name: "Altstadt area", city: "Düsseldorf", country: "Germany" },
+  { lat: 48.7758, lng: 9.1829, name: "Schlossplatz area", city: "Stuttgart", country: "Germany" },
+  { lat: 51.0504, lng: 13.7373, name: "Frauenkirche area", city: "Dresden", country: "Germany" },
+  { lat: 49.4521, lng: 11.0767, name: "Old Town area", city: "Nuremberg", country: "Germany" },
+
+  // Netherlands
+  { lat: 52.3676, lng: 4.9041, name: "Dam Square area", city: "Amsterdam", country: "Netherlands" },
+  { lat: 52.3702, lng: 4.8952, name: "Anne Frank House area", city: "Amsterdam", country: "Netherlands" },
+  { lat: 52.0799, lng: 4.3113, name: "Binnenhof area", city: "The Hague", country: "Netherlands" },
+  { lat: 51.9225, lng: 4.4792, name: "Erasmus Bridge area", city: "Rotterdam", country: "Netherlands" },
+  { lat: 52.0907, lng: 5.1214, name: "Dom Tower area", city: "Utrecht", country: "Netherlands" },
+
+  // Belgium
+  { lat: 50.8467, lng: 4.3525, name: "Grand Place area", city: "Brussels", country: "Belgium" },
+  { lat: 51.0500, lng: 3.7303, name: "Graslei area", city: "Ghent", country: "Belgium" },
+  { lat: 51.2093, lng: 3.2247, name: "Market Square area", city: "Bruges", country: "Belgium" },
+  { lat: 50.6292, lng: 5.5797, name: "Place Saint-Lambert area", city: "Liège", country: "Belgium" },
+
+  // Scandinavia
+  { lat: 59.3275, lng: 18.0675, name: "Gamla Stan", city: "Stockholm", country: "Sweden" },
+  { lat: 57.7089, lng: 11.9746, name: "Haga district area", city: "Gothenburg", country: "Sweden" },
+  { lat: 55.6049, lng: 13.0038, name: "Stortorget area", city: "Malmö", country: "Sweden" },
+  { lat: 60.1699, lng: 24.9384, name: "Senate Square area", city: "Helsinki", country: "Finland" },
+  { lat: 61.4978, lng: 23.7610, name: "Hämeenkatu area", city: "Tampere", country: "Finland" },
+  { lat: 55.6761, lng: 12.5683, name: "Nyhavn area", city: "Copenhagen", country: "Denmark" },
+  { lat: 56.1572, lng: 10.2107, name: "Aarhus Cathedral area", city: "Aarhus", country: "Denmark" },
+  { lat: 59.9139, lng: 10.7522, name: "Karl Johans gate", city: "Oslo", country: "Norway" },
+  { lat: 60.3913, lng: 5.3221, name: "Bryggen area", city: "Bergen", country: "Norway" },
+
+  // Central Europe
+  { lat: 50.0755, lng: 14.4378, name: "Old Town Square", city: "Prague", country: "Czech Republic" },
+  { lat: 49.1951, lng: 16.6068, name: "Freedom Square area", city: "Brno", country: "Czech Republic" },
+  { lat: 47.4979, lng: 19.0402, name: "Parliament area", city: "Budapest", country: "Hungary" },
+  { lat: 47.4984, lng: 19.0408, name: "Chain Bridge area", city: "Budapest", country: "Hungary" },
+  { lat: 48.2082, lng: 16.3738, name: "St. Stephen's Cathedral area", city: "Vienna", country: "Austria" },
+  { lat: 48.2085, lng: 16.3721, name: "Graben area", city: "Vienna", country: "Austria" },
+  { lat: 47.8095, lng: 13.0550, name: "Getreidegasse area", city: "Salzburg", country: "Austria" },
+  { lat: 47.2692, lng: 11.3933, name: "Maria-Theresien-Straße", city: "Innsbruck", country: "Austria" },
+
+  // Switzerland
+  { lat: 46.9480, lng: 7.4474, name: "Bern Old Town", city: "Bern", country: "Switzerland" },
+  { lat: 47.3769, lng: 8.5417, name: "Bahnhofstrasse", city: "Zurich", country: "Switzerland" },
+  { lat: 46.2044, lng: 6.1432, name: "Jet d'Eau area", city: "Geneva", country: "Switzerland" },
+  { lat: 47.0502, lng: 8.3093, name: "Chapel Bridge area", city: "Lucerne", country: "Switzerland" },
+  { lat: 46.5197, lng: 6.6323, name: "Cathedral area", city: "Lausanne", country: "Switzerland" },
+
+  // Portugal
+  { lat: 38.7223, lng: -9.1393, name: "Belém Tower area", city: "Lisbon", country: "Portugal" },
+  { lat: 38.7139, lng: -9.1334, name: "Alfama area", city: "Lisbon", country: "Portugal" },
+  { lat: 38.7103, lng: -9.1362, name: "Praça do Comércio area", city: "Lisbon", country: "Portugal" },
+  { lat: 41.1579, lng: -8.6291, name: "Ribeira area", city: "Porto", country: "Portugal" },
+  { lat: 41.1496, lng: -8.6109, name: "São Bento Station area", city: "Porto", country: "Portugal" },
+
+  // Greece
+  { lat: 37.9715, lng: 23.7267, name: "Acropolis area", city: "Athens", country: "Greece" },
+  { lat: 37.9755, lng: 23.7348, name: "Monastiraki area", city: "Athens", country: "Greece" },
+  { lat: 40.6401, lng: 22.9444, name: "White Tower area", city: "Thessaloniki", country: "Greece" },
+  { lat: 36.4618, lng: 28.2253, name: "Old Town area", city: "Rhodes", country: "Greece" },
+
+  // Russia
+  { lat: 55.7558, lng: 37.6176, name: "Red Square area", city: "Moscow", country: "Russia" },
+  { lat: 55.7520, lng: 37.6175, name: "GUM department store area", city: "Moscow", country: "Russia" },
+  { lat: 59.9343, lng: 30.3351, name: "Nevsky Prospekt", city: "Saint Petersburg", country: "Russia" },
+  { lat: 59.9398, lng: 30.3146, name: "Hermitage area", city: "Saint Petersburg", country: "Russia" },
+
+  // Eastern & Southern Europe
+  { lat: 64.1466, lng: -21.9426, name: "Hallgrímskirkja area", city: "Reykjavik", country: "Iceland" },
+  { lat: 53.3498, lng: -6.2603, name: "O'Connell Street area", city: "Dublin", country: "Ireland" },
+  { lat: 51.8969, lng: -8.4863, name: "English Market area", city: "Cork", country: "Ireland" },
+  { lat: 53.2707, lng: -9.0568, name: "Eyre Square area", city: "Galway", country: "Ireland" },
+  { lat: 50.0647, lng: 19.9450, name: "Main Square area", city: "Krakow", country: "Poland" },
+  { lat: 52.2297, lng: 21.0122, name: "Warsaw Old Town", city: "Warsaw", country: "Poland" },
+  { lat: 54.3520, lng: 18.6466, name: "Long Market area", city: "Gdańsk", country: "Poland" },
+  { lat: 51.1079, lng: 17.0385, name: "Market Square area", city: "Wrocław", country: "Poland" },
+  { lat: 44.4268, lng: 26.1025, name: "Bucharest Old Town", city: "Bucharest", country: "Romania" },
+  { lat: 45.7489, lng: 21.2087, name: "Victory Square area", city: "Timișoara", country: "Romania" },
+  { lat: 46.7712, lng: 23.6236, name: "Union Square area", city: "Cluj-Napoca", country: "Romania" },
+  { lat: 42.6977, lng: 23.3219, name: "Vitosha Boulevard", city: "Sofia", country: "Bulgaria" },
+  { lat: 42.1354, lng: 24.7453, name: "Kapana district area", city: "Plovdiv", country: "Bulgaria" },
+  { lat: 45.8150, lng: 15.9819, name: "Ban Jelačić Square area", city: "Zagreb", country: "Croatia" },
+  { lat: 43.5081, lng: 16.4402, name: "Riva waterfront", city: "Split", country: "Croatia" },
+  { lat: 42.6507, lng: 18.0944, name: "Old Town area", city: "Dubrovnik", country: "Croatia" },
+  { lat: 46.0569, lng: 14.5058, name: "Prešeren Square area", city: "Ljubljana", country: "Slovenia" },
+  { lat: 44.7866, lng: 20.4489, name: "Knez Mihailova area", city: "Belgrade", country: "Serbia" },
+  { lat: 43.8563, lng: 18.4131, name: "Baščaršija area", city: "Sarajevo", country: "Bosnia and Herzegovina" },
+  { lat: 42.4410, lng: 19.2636, name: "Old Town area", city: "Podgorica", country: "Montenegro" },
+  { lat: 41.9981, lng: 21.4254, name: "Old Bazaar area", city: "Skopje", country: "North Macedonia" },
+  { lat: 41.3275, lng: 19.8187, name: "Skanderbeg Square area", city: "Tirana", country: "Albania" },
+  { lat: 56.9496, lng: 24.1052, name: "Old Riga area", city: "Riga", country: "Latvia" },
+  { lat: 54.6872, lng: 25.2797, name: "Gediminas Avenue area", city: "Vilnius", country: "Lithuania" },
+  { lat: 59.4370, lng: 24.7536, name: "Old Town area", city: "Tallinn", country: "Estonia" },
+  { lat: 35.8989, lng: 14.5146, name: "Valletta waterfront area", city: "Valletta", country: "Malta" },
+  { lat: 35.1753, lng: 33.3642, name: "Ledra Street area", city: "Nicosia", country: "Cyprus" },
+  { lat: 49.6117, lng: 6.1300, name: "Place Guillaume II area", city: "Luxembourg City", country: "Luxembourg" },
+  { lat: 43.7384, lng: 7.4246, name: "Casino area", city: "Monte Carlo", country: "Monaco" },
 
   // ── Asia ────────────────────────────────────────
-  {
-    lat: 35.6595,
-    lng: 139.7004,
-    name: "Shibuya Crossing area",
-    city: "Tokyo",
-    country: "Japan"
-  },
-  {
-    lat: 35.7101,
-    lng: 139.8107,
-    name: "Asakusa area",
-    city: "Tokyo",
-    country: "Japan"
-  },
-  {
-    lat: 35.0116,
-    lng: 135.7681,
-    name: "Fushimi Inari area",
-    city: "Kyoto",
-    country: "Japan"
-  },
-  {
-    lat: 34.6937,
-    lng: 135.5023,
-    name: "Dotonbori area",
-    city: "Osaka",
-    country: "Japan"
-  },
-  {
-    lat: 37.5665,
-    lng: 126.9780,
-    name: "Gwanghwamun area",
-    city: "Seoul",
-    country: "South Korea"
-  },
-  {
-    lat: 37.5796,
-    lng: 126.9770,
-    name: "Gyeongbokgung area",
-    city: "Seoul",
-    country: "South Korea"
-  },
-  {
-    lat: 1.2838,
-    lng: 103.8591,
-    name: "Marina Bay area",
-    city: "Singapore",
-    country: "Singapore"
-  },
-  {
-    lat: 13.7563,
-    lng: 100.5018,
-    name: "Grand Palace area",
-    city: "Bangkok",
-    country: "Thailand"
-  },
-  {
-    lat: 21.0285,
-    lng: 105.8542,
-    name: "Old Quarter area",
-    city: "Hanoi",
-    country: "Vietnam"
-  },
-  {
-    lat: 10.7769,
-    lng: 106.7009,
-    name: "Notre-Dame Cathedral area",
-    city: "Ho Chi Minh City",
-    country: "Vietnam"
-  },
-  {
-    lat: 3.1390,
-    lng: 101.6869,
-    name: "Petronas Towers area",
-    city: "Kuala Lumpur",
-    country: "Malaysia"
-  },
-  {
-    lat: 22.3193,
-    lng: 114.1694,
-    name: "Victoria Harbour area",
-    city: "Hong Kong",
-    country: "China"
-  },
-  {
-    lat: 25.0343,
-    lng: 121.5645,
-    name: "Taipei 101 area",
-    city: "Taipei",
-    country: "Taiwan"
-  },
-  {
-    lat: 14.5995,
-    lng: 120.9842,
-    name: "Intramuros area",
-    city: "Manila",
-    country: "Philippines"
-  },
-  {
-    lat: 28.6139,
-    lng: 77.2090,
-    name: "India Gate area",
-    city: "New Delhi",
-    country: "India"
-  },
-  {
-    lat: 19.0760,
-    lng: 72.8777,
-    name: "Gateway of India area",
-    city: "Mumbai",
-    country: "India"
-  },
-  {
-    lat: 41.0082,
-    lng: 28.9784,
-    name: "Hagia Sophia area",
-    city: "Istanbul",
-    country: "Turkey"
-  },
-  {
-    lat: 39.9334,
-    lng: 32.8597,
-    name: "Kızılay Square area",
-    city: "Ankara",
-    country: "Turkey"
-  },
-  {
-    lat: 31.7683,
-    lng: 35.2137,
-    name: "Old City area",
-    city: "Jerusalem",
-    country: "Israel"
-  },
-  {
-    lat: 32.0853,
-    lng: 34.7818,
-    name: "Rothschild Boulevard",
-    city: "Tel Aviv",
-    country: "Israel"
-  },
-  {
-    lat: 25.1972,
-    lng: 55.2744,
-    name: "Burj Khalifa area",
-    city: "Dubai",
-    country: "UAE"
-  },
+  // Japan
+  { lat: 35.6595, lng: 139.7004, name: "Shibuya Crossing area", city: "Tokyo", country: "Japan" },
+  { lat: 35.7101, lng: 139.8107, name: "Asakusa area", city: "Tokyo", country: "Japan" },
+  { lat: 35.6762, lng: 139.6503, name: "Shinjuku area", city: "Tokyo", country: "Japan" },
+  { lat: 35.6719, lng: 139.7649, name: "Ginza area", city: "Tokyo", country: "Japan" },
+  { lat: 35.6586, lng: 139.7454, name: "Tokyo Tower area", city: "Tokyo", country: "Japan" },
+  { lat: 35.0116, lng: 135.7681, name: "Fushimi Inari area", city: "Kyoto", country: "Japan" },
+  { lat: 35.0394, lng: 135.7292, name: "Kinkaku-ji area", city: "Kyoto", country: "Japan" },
+  { lat: 34.6937, lng: 135.5023, name: "Dotonbori area", city: "Osaka", country: "Japan" },
+  { lat: 34.6851, lng: 135.5270, name: "Osaka Castle area", city: "Osaka", country: "Japan" },
+  { lat: 34.3853, lng: 132.4553, name: "Peace Memorial area", city: "Hiroshima", country: "Japan" },
+  { lat: 33.5904, lng: 130.4017, name: "Canal City area", city: "Fukuoka", country: "Japan" },
+  { lat: 43.0621, lng: 141.3544, name: "Odori Park area", city: "Sapporo", country: "Japan" },
+  { lat: 35.1815, lng: 136.9066, name: "Osu area", city: "Nagoya", country: "Japan" },
+  { lat: 34.2272, lng: 135.1670, name: "Wakayama Castle area", city: "Wakayama", country: "Japan" },
+  { lat: 32.7503, lng: 129.8777, name: "Glover Garden area", city: "Nagasaki", country: "Japan" },
+
+  // South Korea
+  { lat: 37.5665, lng: 126.9780, name: "Gwanghwamun area", city: "Seoul", country: "South Korea" },
+  { lat: 37.5796, lng: 126.9770, name: "Gyeongbokgung area", city: "Seoul", country: "South Korea" },
+  { lat: 37.5572, lng: 126.9927, name: "Myeongdong area", city: "Seoul", country: "South Korea" },
+  { lat: 37.5547, lng: 126.9707, name: "Itaewon area", city: "Seoul", country: "South Korea" },
+  { lat: 35.1796, lng: 129.0756, name: "Haeundae Beach area", city: "Busan", country: "South Korea" },
+  { lat: 35.8714, lng: 128.6014, name: "Dongseongno area", city: "Daegu", country: "South Korea" },
+
+  // China, Hong Kong & Taiwan
+  { lat: 22.3193, lng: 114.1694, name: "Victoria Harbour area", city: "Hong Kong", country: "China" },
+  { lat: 22.2783, lng: 114.1747, name: "Temple Street area", city: "Hong Kong", country: "China" },
+  { lat: 31.2304, lng: 121.4737, name: "The Bund area", city: "Shanghai", country: "China" },
+  { lat: 39.9042, lng: 116.4074, name: "Tiananmen area", city: "Beijing", country: "China" },
+  { lat: 22.1987, lng: 113.5439, name: "Ruins of St. Paul's area", city: "Macau", country: "China" },
+  { lat: 25.0343, lng: 121.5645, name: "Taipei 101 area", city: "Taipei", country: "Taiwan" },
+  { lat: 25.0478, lng: 121.5170, name: "Ximending area", city: "Taipei", country: "Taiwan" },
+  { lat: 22.6273, lng: 120.3014, name: "Pier-2 Art Center area", city: "Kaohsiung", country: "Taiwan" },
+
+  // Southeast Asia
+  { lat: 1.2838, lng: 103.8591, name: "Marina Bay area", city: "Singapore", country: "Singapore" },
+  { lat: 1.2814, lng: 103.8445, name: "Chinatown area", city: "Singapore", country: "Singapore" },
+  { lat: 1.3048, lng: 103.8318, name: "Orchard Road area", city: "Singapore", country: "Singapore" },
+  { lat: 13.7563, lng: 100.5018, name: "Grand Palace area", city: "Bangkok", country: "Thailand" },
+  { lat: 13.7469, lng: 100.5349, name: "Khao San Road area", city: "Bangkok", country: "Thailand" },
+  { lat: 18.7883, lng: 98.9853, name: "Old City area", city: "Chiang Mai", country: "Thailand" },
+  { lat: 7.8804, lng: 98.3923, name: "Patong Beach area", city: "Phuket", country: "Thailand" },
+  { lat: 21.0285, lng: 105.8542, name: "Old Quarter area", city: "Hanoi", country: "Vietnam" },
+  { lat: 10.7769, lng: 106.7009, name: "Notre-Dame Cathedral area", city: "Ho Chi Minh City", country: "Vietnam" },
+  { lat: 16.4637, lng: 107.5909, name: "Imperial City area", city: "Hue", country: "Vietnam" },
+  { lat: 15.8801, lng: 108.3380, name: "Ancient Town area", city: "Hoi An", country: "Vietnam" },
+  { lat: 3.1390, lng: 101.6869, name: "Petronas Towers area", city: "Kuala Lumpur", country: "Malaysia" },
+  { lat: 3.1466, lng: 101.7108, name: "Bukit Bintang area", city: "Kuala Lumpur", country: "Malaysia" },
+  { lat: 5.4164, lng: 100.3327, name: "George Town area", city: "Penang", country: "Malaysia" },
+  { lat: 14.5995, lng: 120.9842, name: "Intramuros area", city: "Manila", country: "Philippines" },
+  { lat: 10.3157, lng: 123.8854, name: "Colon Street area", city: "Cebu City", country: "Philippines" },
+  { lat: -6.1751, lng: 106.8650, name: "Monas area", city: "Jakarta", country: "Indonesia" },
+  { lat: -8.5069, lng: 115.2625, name: "Kuta Beach area", city: "Bali", country: "Indonesia" },
+  { lat: -7.7972, lng: 110.3688, name: "Malioboro Street area", city: "Yogyakarta", country: "Indonesia" },
+  { lat: 11.5564, lng: 104.9282, name: "Royal Palace area", city: "Phnom Penh", country: "Cambodia" },
+  { lat: 13.4125, lng: 103.8670, name: "Angkor Wat area", city: "Siem Reap", country: "Cambodia" },
+  { lat: 17.9757, lng: 102.6331, name: "Patuxai area", city: "Vientiane", country: "Laos" },
+  { lat: 16.8661, lng: 96.1951, name: "Shwedagon Pagoda area", city: "Yangon", country: "Myanmar" },
+
+  // India & South Asia
+  { lat: 28.6139, lng: 77.2090, name: "India Gate area", city: "New Delhi", country: "India" },
+  { lat: 28.6562, lng: 77.2410, name: "Red Fort area", city: "New Delhi", country: "India" },
+  { lat: 19.0760, lng: 72.8777, name: "Gateway of India area", city: "Mumbai", country: "India" },
+  { lat: 19.0176, lng: 72.8562, name: "Marine Drive area", city: "Mumbai", country: "India" },
+  { lat: 12.9716, lng: 77.5946, name: "MG Road area", city: "Bangalore", country: "India" },
+  { lat: 22.5726, lng: 88.3639, name: "Victoria Memorial area", city: "Kolkata", country: "India" },
+  { lat: 13.0827, lng: 80.2707, name: "Marina Beach area", city: "Chennai", country: "India" },
+  { lat: 27.1751, lng: 78.0421, name: "Taj Mahal area", city: "Agra", country: "India" },
+  { lat: 26.9124, lng: 75.7873, name: "Hawa Mahal area", city: "Jaipur", country: "India" },
+  { lat: 15.2993, lng: 74.1240, name: "Panaji Church area", city: "Goa", country: "India" },
+  { lat: 27.7172, lng: 85.3240, name: "Durbar Square area", city: "Kathmandu", country: "Nepal" },
+  { lat: 6.9271, lng: 79.8612, name: "Galle Face Green area", city: "Colombo", country: "Sri Lanka" },
+
+  // Turkey & Middle East
+  { lat: 41.0082, lng: 28.9784, name: "Hagia Sophia area", city: "Istanbul", country: "Turkey" },
+  { lat: 41.0136, lng: 28.9550, name: "Grand Bazaar area", city: "Istanbul", country: "Turkey" },
+  { lat: 39.9334, lng: 32.8597, name: "Kızılay Square area", city: "Ankara", country: "Turkey" },
+  { lat: 38.4192, lng: 27.1287, name: "Konak Square area", city: "Izmir", country: "Turkey" },
+  { lat: 37.8719, lng: 32.5047, name: "Mevlana Museum area", city: "Konya", country: "Turkey" },
+  { lat: 38.6431, lng: 34.8289, name: "Fairy Chimneys area", city: "Cappadocia", country: "Turkey" },
+  { lat: 36.8969, lng: 30.7133, name: "Kaleiçi area", city: "Antalya", country: "Turkey" },
+  { lat: 31.7683, lng: 35.2137, name: "Old City area", city: "Jerusalem", country: "Israel" },
+  { lat: 32.0853, lng: 34.7818, name: "Rothschild Boulevard", city: "Tel Aviv", country: "Israel" },
+  { lat: 25.1972, lng: 55.2744, name: "Burj Khalifa area", city: "Dubai", country: "UAE" },
+  { lat: 25.2048, lng: 55.2708, name: "Dubai Mall area", city: "Dubai", country: "UAE" },
+  { lat: 24.4539, lng: 54.3773, name: "Corniche area", city: "Abu Dhabi", country: "UAE" },
+  { lat: 25.3548, lng: 51.1839, name: "Souq Waqif area", city: "Doha", country: "Qatar" },
+  { lat: 26.2235, lng: 50.5876, name: "Bab Al Bahrain area", city: "Manama", country: "Bahrain" },
+  { lat: 23.5880, lng: 58.3829, name: "Mutrah Corniche area", city: "Muscat", country: "Oman" },
+  { lat: 33.8938, lng: 35.5018, name: "Corniche area", city: "Beirut", country: "Lebanon" },
+  { lat: 31.9539, lng: 35.9106, name: "Rainbow Street area", city: "Amman", country: "Jordan" },
+
+  // Central Asia & Caucasus
+  { lat: 41.2995, lng: 69.2401, name: "Amir Timur Square area", city: "Tashkent", country: "Uzbekistan" },
+  { lat: 39.6542, lng: 66.9597, name: "Registan area", city: "Samarkand", country: "Uzbekistan" },
+  { lat: 43.2220, lng: 76.8512, name: "Panfilov Park area", city: "Almaty", country: "Kazakhstan" },
+  { lat: 51.1694, lng: 71.4491, name: "Bayterek Tower area", city: "Astana", country: "Kazakhstan" },
+  { lat: 42.8746, lng: 74.5698, name: "Ala-Too Square area", city: "Bishkek", country: "Kyrgyzstan" },
+  { lat: 41.7151, lng: 44.8271, name: "Freedom Square area", city: "Tbilisi", country: "Georgia" },
+  { lat: 40.1792, lng: 44.4991, name: "Republic Square area", city: "Yerevan", country: "Armenia" },
+  { lat: 40.4093, lng: 49.8671, name: "Fountain Square area", city: "Baku", country: "Azerbaijan" },
 
   // ── Americas ────────────────────────────────────
-  {
-    lat: 40.7580,
-    lng: -73.9855,
-    name: "Times Square",
-    city: "New York",
-    country: "United States"
-  },
-  {
-    lat: 40.7484,
-    lng: -73.9857,
-    name: "Empire State Building area",
-    city: "New York",
-    country: "United States"
-  },
-  {
-    lat: 37.7749,
-    lng: -122.4194,
-    name: "Golden Gate area",
-    city: "San Francisco",
-    country: "United States"
-  },
-  {
-    lat: 34.0522,
-    lng: -118.2437,
-    name: "Hollywood Boulevard area",
-    city: "Los Angeles",
-    country: "United States"
-  },
-  {
-    lat: 41.8827,
-    lng: -87.6233,
-    name: "Millennium Park area",
-    city: "Chicago",
-    country: "United States"
-  },
-  {
-    lat: 38.8977,
-    lng: -77.0365,
-    name: "White House area",
-    city: "Washington D.C.",
-    country: "United States"
-  },
-  {
-    lat: 36.1699,
-    lng: -115.1398,
-    name: "The Strip area",
-    city: "Las Vegas",
-    country: "United States"
-  },
-  {
-    lat: 25.7617,
-    lng: -80.1918,
-    name: "South Beach area",
-    city: "Miami",
-    country: "United States"
-  },
-  {
-    lat: 47.6062,
-    lng: -122.3321,
-    name: "Pike Place Market area",
-    city: "Seattle",
-    country: "United States"
-  },
-  {
-    lat: 29.9511,
-    lng: -90.0715,
-    name: "French Quarter",
-    city: "New Orleans",
-    country: "United States"
-  },
-  {
-    lat: 43.6532,
-    lng: -79.3832,
-    name: "CN Tower area",
-    city: "Toronto",
-    country: "Canada"
-  },
-  {
-    lat: 49.2827,
-    lng: -123.1207,
-    name: "Gastown area",
-    city: "Vancouver",
-    country: "Canada"
-  },
-  {
-    lat: 45.5017,
-    lng: -73.5673,
-    name: "Old Montreal area",
-    city: "Montreal",
-    country: "Canada"
-  },
-  {
-    lat: 19.4326,
-    lng: -99.1332,
-    name: "Zócalo area",
-    city: "Mexico City",
-    country: "Mexico"
-  },
-  {
-    lat: 20.6296,
-    lng: -87.0739,
-    name: "Hotel Zone area",
-    city: "Cancún",
-    country: "Mexico"
-  },
-  {
-    lat: -22.9068,
-    lng: -43.1729,
-    name: "Copacabana Beach area",
-    city: "Rio de Janeiro",
-    country: "Brazil"
-  },
-  {
-    lat: -23.5505,
-    lng: -46.6333,
-    name: "Paulista Avenue area",
-    city: "São Paulo",
-    country: "Brazil"
-  },
-  {
-    lat: -34.6037,
-    lng: -58.3816,
-    name: "Obelisco area",
-    city: "Buenos Aires",
-    country: "Argentina"
-  },
-  {
-    lat: -33.4489,
-    lng: -70.6693,
-    name: "Plaza de Armas area",
-    city: "Santiago",
-    country: "Chile"
-  },
-  {
-    lat: -12.0464,
-    lng: -77.0428,
-    name: "Plaza Mayor area",
-    city: "Lima",
-    country: "Peru"
-  },
-  {
-    lat: 4.7110,
-    lng: -74.0721,
-    name: "La Candelaria area",
-    city: "Bogotá",
-    country: "Colombia"
-  },
-  {
-    lat: -0.1807,
-    lng: -78.4678,
-    name: "Historic Centre area",
-    city: "Quito",
-    country: "Ecuador"
-  },
-  {
-    lat: 18.4655,
-    lng: -66.1057,
-    name: "Old San Juan area",
-    city: "San Juan",
-    country: "Puerto Rico"
-  },
-  {
-    lat: 23.1136,
-    lng: -82.3666,
-    name: "Malecón area",
-    city: "Havana",
-    country: "Cuba"
-  },
+  // United States
+  { lat: 40.7580, lng: -73.9855, name: "Times Square", city: "New York", country: "United States" },
+  { lat: 40.7484, lng: -73.9857, name: "Empire State Building area", city: "New York", country: "United States" },
+  { lat: 40.7589, lng: -73.9851, name: "Rockefeller Center area", city: "New York", country: "United States" },
+  { lat: 40.7527, lng: -73.9772, name: "Grand Central area", city: "New York", country: "United States" },
+  { lat: 40.7061, lng: -73.9969, name: "Brooklyn Bridge area", city: "New York", country: "United States" },
+  { lat: 40.7308, lng: -73.9973, name: "Washington Square area", city: "New York", country: "United States" },
+  { lat: 37.7749, lng: -122.4194, name: "Golden Gate area", city: "San Francisco", country: "United States" },
+  { lat: 37.7956, lng: -122.3933, name: "Ferry Building area", city: "San Francisco", country: "United States" },
+  { lat: 37.8024, lng: -122.4058, name: "Fisherman's Wharf area", city: "San Francisco", country: "United States" },
+  { lat: 34.0522, lng: -118.2437, name: "Hollywood Boulevard area", city: "Los Angeles", country: "United States" },
+  { lat: 34.0195, lng: -118.4912, name: "Santa Monica Pier area", city: "Los Angeles", country: "United States" },
+  { lat: 33.8121, lng: -117.9190, name: "Disneyland area", city: "Anaheim", country: "United States" },
+  { lat: 41.8827, lng: -87.6233, name: "Millennium Park area", city: "Chicago", country: "United States" },
+  { lat: 41.8789, lng: -87.6359, name: "Willis Tower area", city: "Chicago", country: "United States" },
+  { lat: 41.8917, lng: -87.6086, name: "Navy Pier area", city: "Chicago", country: "United States" },
+  { lat: 38.8977, lng: -77.0365, name: "White House area", city: "Washington D.C.", country: "United States" },
+  { lat: 38.8893, lng: -77.0502, name: "Lincoln Memorial area", city: "Washington D.C.", country: "United States" },
+  { lat: 38.8892, lng: -77.0200, name: "Capitol Building area", city: "Washington D.C.", country: "United States" },
+  { lat: 36.1699, lng: -115.1398, name: "The Strip area", city: "Las Vegas", country: "United States" },
+  { lat: 36.1147, lng: -115.1728, name: "Fremont Street area", city: "Las Vegas", country: "United States" },
+  { lat: 25.7617, lng: -80.1918, name: "South Beach area", city: "Miami", country: "United States" },
+  { lat: 25.7907, lng: -80.1300, name: "Art Deco District area", city: "Miami Beach", country: "United States" },
+  { lat: 47.6062, lng: -122.3321, name: "Pike Place Market area", city: "Seattle", country: "United States" },
+  { lat: 47.6205, lng: -122.3493, name: "Space Needle area", city: "Seattle", country: "United States" },
+  { lat: 29.9511, lng: -90.0715, name: "French Quarter", city: "New Orleans", country: "United States" },
+  { lat: 29.9584, lng: -90.0644, name: "Bourbon Street area", city: "New Orleans", country: "United States" },
+  { lat: 42.3601, lng: -71.0589, name: "Faneuil Hall area", city: "Boston", country: "United States" },
+  { lat: 42.3554, lng: -71.0656, name: "Boston Common area", city: "Boston", country: "United States" },
+  { lat: 39.9526, lng: -75.1652, name: "Independence Hall area", city: "Philadelphia", country: "United States" },
+  { lat: 32.7157, lng: -117.1611, name: "Gaslamp Quarter area", city: "San Diego", country: "United States" },
+  { lat: 30.2672, lng: -97.7431, name: "6th Street area", city: "Austin", country: "United States" },
+  { lat: 29.7604, lng: -95.3698, name: "Downtown area", city: "Houston", country: "United States" },
+  { lat: 32.7767, lng: -96.7970, name: "Dealey Plaza area", city: "Dallas", country: "United States" },
+  { lat: 33.4484, lng: -112.0740, name: "Downtown area", city: "Phoenix", country: "United States" },
+  { lat: 39.7392, lng: -104.9903, name: "16th Street Mall area", city: "Denver", country: "United States" },
+  { lat: 36.1627, lng: -86.7816, name: "Broadway area", city: "Nashville", country: "United States" },
+  { lat: 33.7490, lng: -84.3880, name: "Centennial Park area", city: "Atlanta", country: "United States" },
+  { lat: 45.5152, lng: -122.6784, name: "Pioneer Square area", city: "Portland", country: "United States" },
+  { lat: 21.2769, lng: -157.8268, name: "Waikiki Beach area", city: "Honolulu", country: "United States" },
+  { lat: 61.2181, lng: -149.9003, name: "Downtown area", city: "Anchorage", country: "United States" },
+  { lat: 29.4241, lng: -98.4936, name: "River Walk area", city: "San Antonio", country: "United States" },
+  { lat: 44.9778, lng: -93.2650, name: "Nicollet Mall area", city: "Minneapolis", country: "United States" },
+  { lat: 38.6270, lng: -90.1994, name: "Gateway Arch area", city: "St. Louis", country: "United States" },
+  { lat: 39.0997, lng: -94.5786, name: "Country Club Plaza area", city: "Kansas City", country: "United States" },
+  { lat: 42.3314, lng: -83.0458, name: "Hart Plaza area", city: "Detroit", country: "United States" },
+  { lat: 40.4406, lng: -79.9959, name: "Market Square area", city: "Pittsburgh", country: "United States" },
+
+  // Canada
+  { lat: 43.6532, lng: -79.3832, name: "CN Tower area", city: "Toronto", country: "Canada" },
+  { lat: 43.6426, lng: -79.3871, name: "Harbourfront area", city: "Toronto", country: "Canada" },
+  { lat: 49.2827, lng: -123.1207, name: "Gastown area", city: "Vancouver", country: "Canada" },
+  { lat: 49.2862, lng: -123.1207, name: "Canada Place area", city: "Vancouver", country: "Canada" },
+  { lat: 45.5017, lng: -73.5673, name: "Old Montreal area", city: "Montreal", country: "Canada" },
+  { lat: 45.5048, lng: -73.5772, name: "Mount Royal area", city: "Montreal", country: "Canada" },
+  { lat: 45.4215, lng: -75.6972, name: "Parliament Hill area", city: "Ottawa", country: "Canada" },
+  { lat: 46.8139, lng: -71.2080, name: "Château Frontenac area", city: "Quebec City", country: "Canada" },
+  { lat: 51.0447, lng: -114.0719, name: "Stephen Avenue area", city: "Calgary", country: "Canada" },
+  { lat: 53.5461, lng: -113.4938, name: "Jasper Avenue area", city: "Edmonton", country: "Canada" },
+  { lat: 44.6488, lng: -63.5752, name: "Halifax Waterfront area", city: "Halifax", country: "Canada" },
+  { lat: 48.4284, lng: -123.3656, name: "Inner Harbour area", city: "Victoria", country: "Canada" },
+  { lat: 49.8951, lng: -97.1384, name: "The Forks area", city: "Winnipeg", country: "Canada" },
+
+  // Mexico
+  { lat: 19.4326, lng: -99.1332, name: "Zócalo area", city: "Mexico City", country: "Mexico" },
+  { lat: 19.4352, lng: -99.1412, name: "Palacio de Bellas Artes area", city: "Mexico City", country: "Mexico" },
+  { lat: 20.6296, lng: -87.0739, name: "Hotel Zone area", city: "Cancún", country: "Mexico" },
+  { lat: 20.6310, lng: -105.2281, name: "Malecón area", city: "Puerto Vallarta", country: "Mexico" },
+  { lat: 20.9674, lng: -89.5926, name: "Plaza Grande area", city: "Mérida", country: "Mexico" },
+  { lat: 17.0608, lng: -96.7253, name: "Santo Domingo area", city: "Oaxaca", country: "Mexico" },
+  { lat: 20.5888, lng: -100.3899, name: "Jardín de la Unión area", city: "Guanajuato", country: "Mexico" },
+  { lat: 19.1738, lng: -96.1342, name: "Malecón area", city: "Veracruz", country: "Mexico" },
+
+  // Central America & Caribbean
+  { lat: 18.4655, lng: -66.1057, name: "Old San Juan area", city: "San Juan", country: "Puerto Rico" },
+  { lat: 23.1136, lng: -82.3666, name: "Malecón area", city: "Havana", country: "Cuba" },
+  { lat: 9.9281, lng: -84.0907, name: "National Theatre area", city: "San José", country: "Costa Rica" },
+  { lat: 8.9824, lng: -79.5199, name: "Casco Viejo area", city: "Panama City", country: "Panama" },
+  { lat: 14.6349, lng: -90.5069, name: "Central Park area", city: "Guatemala City", country: "Guatemala" },
+  { lat: 18.4861, lng: -69.9312, name: "Colonial Zone area", city: "Santo Domingo", country: "Dominican Republic" },
+  { lat: 18.0179, lng: -76.8099, name: "Devon House area", city: "Kingston", country: "Jamaica" },
+  { lat: 13.6929, lng: -89.2182, name: "Historic Centre area", city: "San Salvador", country: "El Salvador" },
+  { lat: 14.0818, lng: -87.2068, name: "Central Park area", city: "Tegucigalpa", country: "Honduras" },
+  { lat: 12.1150, lng: -86.2362, name: "Cathedral area", city: "Managua", country: "Nicaragua" },
+
+  // South America
+  { lat: -22.9068, lng: -43.1729, name: "Copacabana Beach area", city: "Rio de Janeiro", country: "Brazil" },
+  { lat: -22.9519, lng: -43.2105, name: "Sugarloaf area", city: "Rio de Janeiro", country: "Brazil" },
+  { lat: -23.5505, lng: -46.6333, name: "Paulista Avenue area", city: "São Paulo", country: "Brazil" },
+  { lat: -23.5489, lng: -46.6388, name: "Ibirapuera Park area", city: "São Paulo", country: "Brazil" },
+  { lat: -12.9714, lng: -38.5124, name: "Pelourinho area", city: "Salvador", country: "Brazil" },
+  { lat: -15.7975, lng: -47.8919, name: "Esplanada dos Ministérios area", city: "Brasília", country: "Brazil" },
+  { lat: -8.0476, lng: -34.8770, name: "Recife Antigo area", city: "Recife", country: "Brazil" },
+  { lat: -3.7172, lng: -38.5433, name: "Beira Mar area", city: "Fortaleza", country: "Brazil" },
+  { lat: -25.4284, lng: -49.2733, name: "Historic Centre area", city: "Curitiba", country: "Brazil" },
+  { lat: -34.6037, lng: -58.3816, name: "Obelisco area", city: "Buenos Aires", country: "Argentina" },
+  { lat: -34.6083, lng: -58.3712, name: "La Boca area", city: "Buenos Aires", country: "Argentina" },
+  { lat: -34.6118, lng: -58.4173, name: "Palermo area", city: "Buenos Aires", country: "Argentina" },
+  { lat: -31.4201, lng: -64.1888, name: "Plaza San Martín area", city: "Córdoba", country: "Argentina" },
+  { lat: -32.8895, lng: -68.8458, name: "Plaza Independencia area", city: "Mendoza", country: "Argentina" },
+  { lat: -33.4489, lng: -70.6693, name: "Plaza de Armas area", city: "Santiago", country: "Chile" },
+  { lat: -33.0153, lng: -71.5500, name: "Cerro Alegre area", city: "Valparaíso", country: "Chile" },
+  { lat: -12.0464, lng: -77.0428, name: "Plaza Mayor area", city: "Lima", country: "Peru" },
+  { lat: -13.5320, lng: -71.9675, name: "Plaza de Armas area", city: "Cusco", country: "Peru" },
+  { lat: 4.7110, lng: -74.0721, name: "La Candelaria area", city: "Bogotá", country: "Colombia" },
+  { lat: 6.2518, lng: -75.5636, name: "El Poblado area", city: "Medellín", country: "Colombia" },
+  { lat: 10.3910, lng: -75.5144, name: "Old Town area", city: "Cartagena", country: "Colombia" },
+  { lat: 3.4516, lng: -76.5320, name: "San Antonio area", city: "Cali", country: "Colombia" },
+  { lat: -0.1807, lng: -78.4678, name: "Historic Centre area", city: "Quito", country: "Ecuador" },
+  { lat: -2.1710, lng: -79.9224, name: "Malecón 2000 area", city: "Guayaquil", country: "Ecuador" },
+  { lat: -16.5000, lng: -68.1193, name: "Plaza Murillo area", city: "La Paz", country: "Bolivia" },
+  { lat: -25.2637, lng: -57.5759, name: "Plaza de los Héroes area", city: "Asunción", country: "Paraguay" },
+  { lat: -34.9011, lng: -56.1645, name: "Ciudad Vieja area", city: "Montevideo", country: "Uruguay" },
+  { lat: 10.4806, lng: -66.9036, name: "Plaza Bolívar area", city: "Caracas", country: "Venezuela" },
+  { lat: 6.8013, lng: -58.1551, name: "Stabroek Market area", city: "Georgetown", country: "Guyana" },
+  { lat: 5.8520, lng: -55.2038, name: "Waterkant area", city: "Paramaribo", country: "Suriname" },
 
   // ── Africa ──────────────────────────────────────
-  {
-    lat: 30.0444,
-    lng: 31.2357,
-    name: "Cairo Tower area",
-    city: "Cairo",
-    country: "Egypt"
-  },
-  {
-    lat: -33.9249,
-    lng: 18.4241,
-    name: "V&A Waterfront area",
-    city: "Cape Town",
-    country: "South Africa"
-  },
-  {
-    lat: -1.2921,
-    lng: 36.8219,
-    name: "City Centre area",
-    city: "Nairobi",
-    country: "Kenya"
-  },
-  {
-    lat: 33.9716,
-    lng: -6.8498,
-    name: "Hassan Tower area",
-    city: "Rabat",
-    country: "Morocco"
-  },
-  {
-    lat: 36.8065,
-    lng: 10.1815,
-    name: "Medina area",
-    city: "Tunis",
-    country: "Tunisia"
-  },
-  {
-    lat: 6.5244,
-    lng: 3.3792,
-    name: "Lagos Island area",
-    city: "Lagos",
-    country: "Nigeria"
-  },
+  // North Africa
+  { lat: 30.0444, lng: 31.2357, name: "Cairo Tower area", city: "Cairo", country: "Egypt" },
+  { lat: 30.0478, lng: 31.2336, name: "Tahrir Square area", city: "Cairo", country: "Egypt" },
+  { lat: 29.9753, lng: 31.1376, name: "Pyramids area", city: "Giza", country: "Egypt" },
+  { lat: 31.2001, lng: 29.9187, name: "Corniche area", city: "Alexandria", country: "Egypt" },
+  { lat: 33.9716, lng: -6.8498, name: "Hassan Tower area", city: "Rabat", country: "Morocco" },
+  { lat: 33.5731, lng: -7.5898, name: "Hassan II Mosque area", city: "Casablanca", country: "Morocco" },
+  { lat: 31.6295, lng: -7.9811, name: "Jemaa el-Fnaa area", city: "Marrakech", country: "Morocco" },
+  { lat: 34.0181, lng: -5.0078, name: "Bab Bou Jeloud area", city: "Fez", country: "Morocco" },
+  { lat: 35.7796, lng: -5.8137, name: "Petit Socco area", city: "Tangier", country: "Morocco" },
+  { lat: 36.8065, lng: 10.1815, name: "Medina area", city: "Tunis", country: "Tunisia" },
+  { lat: 36.7538, lng: 3.0588, name: "Martyrs Square area", city: "Algiers", country: "Algeria" },
+
+  // West Africa
+  { lat: 6.5244, lng: 3.3792, name: "Lagos Island area", city: "Lagos", country: "Nigeria" },
+  { lat: 9.0579, lng: 7.4951, name: "Aso Rock area", city: "Abuja", country: "Nigeria" },
+  { lat: 5.6037, lng: -0.1870, name: "Independence Square area", city: "Accra", country: "Ghana" },
+  { lat: 6.6885, lng: -1.6244, name: "Kejetia Market area", city: "Kumasi", country: "Ghana" },
+  { lat: 14.6928, lng: -17.4467, name: "Place de l'Indépendance area", city: "Dakar", country: "Senegal" },
+  { lat: 5.3600, lng: -4.0083, name: "Plateau area", city: "Abidjan", country: "Ivory Coast" },
+
+  // East Africa
+  { lat: -1.2921, lng: 36.8219, name: "City Centre area", city: "Nairobi", country: "Kenya" },
+  { lat: -4.0435, lng: 39.6682, name: "Old Town area", city: "Mombasa", country: "Kenya" },
+  { lat: -6.7924, lng: 39.2083, name: "Askari Monument area", city: "Dar es Salaam", country: "Tanzania" },
+  { lat: 0.3476, lng: 32.5825, name: "Kampala Road area", city: "Kampala", country: "Uganda" },
+  { lat: -1.9403, lng: 29.8739, name: "City Centre area", city: "Kigali", country: "Rwanda" },
+  { lat: 9.0054, lng: 38.7636, name: "Meskel Square area", city: "Addis Ababa", country: "Ethiopia" },
+  { lat: -18.8792, lng: 47.5079, name: "Analakely area", city: "Antananarivo", country: "Madagascar" },
+  { lat: -20.1609, lng: 57.5012, name: "Port Louis waterfront area", city: "Port Louis", country: "Mauritius" },
+
+  // Southern Africa
+  { lat: -33.9249, lng: 18.4241, name: "V&A Waterfront area", city: "Cape Town", country: "South Africa" },
+  { lat: -33.9258, lng: 18.4232, name: "Long Street area", city: "Cape Town", country: "South Africa" },
+  { lat: -26.2041, lng: 28.0473, name: "Nelson Mandela Square area", city: "Johannesburg", country: "South Africa" },
+  { lat: -29.8587, lng: 31.0218, name: "Golden Mile area", city: "Durban", country: "South Africa" },
+  { lat: -33.9608, lng: 25.6022, name: "Boardwalk area", city: "Port Elizabeth", country: "South Africa" },
+  { lat: -25.9692, lng: 32.5732, name: "Municipal Market area", city: "Maputo", country: "Mozambique" },
+  { lat: -17.8252, lng: 31.0335, name: "First Street area", city: "Harare", country: "Zimbabwe" },
+  { lat: -15.3875, lng: 28.3228, name: "Cairo Road area", city: "Lusaka", country: "Zambia" },
+  { lat: -24.6282, lng: 25.9231, name: "Main Mall area", city: "Gaborone", country: "Botswana" },
+  { lat: -22.5597, lng: 17.0832, name: "Independence Avenue area", city: "Windhoek", country: "Namibia" },
 
   // ── Oceania ─────────────────────────────────────
-  {
-    lat: -33.8568,
-    lng: 151.2153,
-    name: "Sydney Opera House area",
-    city: "Sydney",
-    country: "Australia"
-  },
-  {
-    lat: -37.8136,
-    lng: 144.9631,
-    name: "Federation Square area",
-    city: "Melbourne",
-    country: "Australia"
-  },
-  {
-    lat: -36.8485,
-    lng: 174.7633,
-    name: "Queen Street area",
-    city: "Auckland",
-    country: "New Zealand"
-  },
-  {
-    lat: -41.2865,
-    lng: 174.7762,
-    name: "Lambton Quay area",
-    city: "Wellington",
-    country: "New Zealand"
-  }
+  // Australia
+  { lat: -33.8568, lng: 151.2153, name: "Sydney Opera House area", city: "Sydney", country: "Australia" },
+  { lat: -33.8688, lng: 151.2093, name: "Darling Harbour area", city: "Sydney", country: "Australia" },
+  { lat: -33.8523, lng: 151.2108, name: "The Rocks area", city: "Sydney", country: "Australia" },
+  { lat: -33.8915, lng: 151.2767, name: "Bondi Beach area", city: "Sydney", country: "Australia" },
+  { lat: -37.8136, lng: 144.9631, name: "Federation Square area", city: "Melbourne", country: "Australia" },
+  { lat: -37.8183, lng: 144.9671, name: "Flinders Street area", city: "Melbourne", country: "Australia" },
+  { lat: -37.8180, lng: 144.9563, name: "South Bank area", city: "Melbourne", country: "Australia" },
+  { lat: -27.4698, lng: 153.0251, name: "South Bank area", city: "Brisbane", country: "Australia" },
+  { lat: -31.9505, lng: 115.8605, name: "Elizabeth Quay area", city: "Perth", country: "Australia" },
+  { lat: -34.9285, lng: 138.6007, name: "Rundle Mall area", city: "Adelaide", country: "Australia" },
+  { lat: -42.8821, lng: 147.3272, name: "Salamanca Place area", city: "Hobart", country: "Australia" },
+  { lat: -12.4634, lng: 130.8456, name: "Mitchell Street area", city: "Darwin", country: "Australia" },
+  { lat: -16.9186, lng: 145.7781, name: "Esplanade area", city: "Cairns", country: "Australia" },
+  { lat: -28.0167, lng: 153.4000, name: "Surfers Paradise area", city: "Gold Coast", country: "Australia" },
+
+  // New Zealand
+  { lat: -36.8485, lng: 174.7633, name: "Queen Street area", city: "Auckland", country: "New Zealand" },
+  { lat: -36.8406, lng: 174.7400, name: "Viaduct Harbour area", city: "Auckland", country: "New Zealand" },
+  { lat: -41.2865, lng: 174.7762, name: "Lambton Quay area", city: "Wellington", country: "New Zealand" },
+  { lat: -41.2924, lng: 174.7787, name: "Cuba Street area", city: "Wellington", country: "New Zealand" },
+  { lat: -43.5321, lng: 172.6362, name: "Cathedral Square area", city: "Christchurch", country: "New Zealand" },
+  { lat: -45.0312, lng: 168.6626, name: "Queenstown Mall area", city: "Queenstown", country: "New Zealand" },
+  { lat: -45.8788, lng: 170.5028, name: "Octagon area", city: "Dunedin", country: "New Zealand" },
+
+  // Pacific Islands
+  { lat: -17.7765, lng: 177.9885, name: "Suva City area", city: "Suva", country: "Fiji" },
+  { lat: -13.8333, lng: -171.7500, name: "Apia Town area", city: "Apia", country: "Samoa" }
 ];
