@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JeoGuessr – Explore the World</title>
+  <link rel="stylesheet" href="css/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/leaflet.js"></script>
+</head>
+<body>
+  <!-- ── Start Screen ──────────────────────────── -->
+  <div id="start-screen">
+    <span class="globe-icon">🌍</span>
+    <h1 class="logo">JeoGuessr</h1>
+    <p class="tagline">How well do you know the world?</p>
+    <button id="play-btn">Play</button>
+    <p class="start-info">
+      🗺️ Look around in Street View &nbsp;·&nbsp; 📍 Click the map to guess
+      &nbsp;·&nbsp; ⭐ Score up to 5,000 per round
+    </p>
+  </div>
+
+  <!-- ── Game Screen ───────────────────────────── -->
+  <div id="game-screen" class="hidden">
+    <div class="streetview-container">
+      <iframe id="streetview-frame" title="Street View"></iframe>
+
+      <div class="game-hud">
+        <div class="hud-item hud-round">
+          Round <span id="round-number">1</span>/<span id="total-rounds">5</span>
+        </div>
+        <div class="hud-item hud-score">
+          Score: <span id="current-score">0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-panel">
+      <div id="guess-map"></div>
+      <div id="guess-panel">
+        <button id="submit-guess" disabled>Place your pin</button>
+      </div>
+    </div>
+
+    <!-- Round Result Overlay -->
+    <div id="round-result" class="hidden">
+      <div class="result-title">This was</div>
+      <div id="result-location"></div>
+      <div class="result-stats">
+        <div class="stat">
+          <div class="stat-value" id="result-distance"></div>
+          <div class="stat-label">Distance</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="result-score"></div>
+          <div class="stat-label">Points</div>
+        </div>
+      </div>
+      <div class="score-bar"><div id="score-bar-fill"></div></div>
+      <button id="next-btn" class="hidden">Next Round →</button>
+    </div>
+  </div>
+
+  <!-- ── Final Results Screen ──────────────────── -->
+  <div id="final-screen" class="hidden">
+    <div class="final-left">
+      <div class="final-header">
+        <h2>Game Over!</h2>
+        <div>
+          <span id="final-score">0</span>
+          <span id="max-possible">/ 25,000</span>
+        </div>
+        <div id="score-percentage"></div>
+        <div id="rating"></div>
+      </div>
+      <ul id="round-summary"></ul>
+      <button id="play-again-btn">Play Again</button>
+    </div>
+    <div class="final-right">
+      <div id="result-map"></div>
+    </div>
+  </div>
+
+  <script src="js/locations.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
